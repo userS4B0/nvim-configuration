@@ -9,7 +9,7 @@ return require('packer').startup(function(use)
         'kyazdani42/nvim-tree.lua',
         requires = {'kyazdani42/nvim-web-devicons', opt = true}
     }
-
+    
     -- [[ Theming ]]
     use {
         'glepnir/dashboard-nvim',
@@ -31,6 +31,14 @@ return require('packer').startup(function(use)
     -- [[ Development ]]
     use {'windwp/nvim-autopairs'}
     use {'nvim-treesitter/nvim-treesitter'}
-
+    
+    use {
+      'nvim-telescope/telescope.nvim', 
+      tag = '0.1.0',
+      requires = {
+        {'nvim-lua/plenary.nvim'},
+        {'kyazdani42/nvim-web-devicons', opt = true}
+      }
+    }
 end)
 
