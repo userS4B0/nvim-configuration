@@ -13,7 +13,10 @@ return require('packer').startup(function(use)
     
     -- Better escape insert mode 
   use {'max397574/better-escape.nvim', config = [[require('config.better-escape')]]}
-
+    
+    -- Command Line autocompletion
+  use {'gelguy/wilder.nvim', config = [['require('config.wilder')']]}  
+    
   -- [[ Theming ]] ------------------------------------------------------------------------------
   
     -- Themes
