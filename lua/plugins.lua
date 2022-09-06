@@ -5,14 +5,14 @@ return require('packer').startup(function(use)
   
     -- Plugin Manager
   use {'wbthomason/packer.nvim'}
-
-    -- Coments
-  use {'tpope/vim-commentary'}
   
     -- File Tree
   use {'kyazdani42/nvim-tree.lua',
        requires = {'kyazdani42/nvim-web-devicons', opt = true}}
   
+    
+    -- Better escape insert mode 
+  use {'max397574/better-escape.nvim', config = [[require('config.better-escape')]]}
 
   -- [[ Theming ]] ------------------------------------------------------------------------------
   
@@ -39,7 +39,10 @@ return require('packer').startup(function(use)
     
     -- Autopairing characters (){}[]''""
   use {'windwp/nvim-autopairs'}                                 
-  
+
+    -- Coments
+  use {'tpope/vim-commentary'}
+
     -- Better syntax highlighting
   use {'nvim-treesitter/nvim-treesitter'}
     
@@ -53,8 +56,5 @@ return require('packer').startup(function(use)
 
     -- Git integration
   use {'tpope/vim-fugitive'}
-
-    -- Code completion
-  -- use {'neoclide/coc.nvim'}  
 
 end)
