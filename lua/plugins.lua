@@ -16,8 +16,9 @@ return require('packer').startup(function(use)
 
   -- [[ Theming ]] ------------------------------------------------------------------------------
   
-    -- Theme
+    -- Themes
   use {'folke/tokyonight.nvim'}
+  use {'shaunsingh/nord.nvim'}
   
     -- Dashboard
   use {'glepnir/dashboard-nvim', config = [[require('config.dashboard-nvim')]]}
