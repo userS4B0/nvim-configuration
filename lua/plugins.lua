@@ -14,8 +14,9 @@ return require('packer').startup(function(use)
   use {'wbthomason/packer.nvim'}
   
     -- File Tree
-  use {'kyazdani42/nvim-tree.lua',
-       requires = {'kyazdani42/nvim-web-devicons', opt = true}}
+  use {'kyazdani42/nvim-tree.lua', requires = {'kyazdani42/nvim-web-devicons', opt = true},
+    config = get_config('luatree')    
+  }
   
     
     -- Better escape insert mode 
@@ -34,7 +35,7 @@ return require('packer').startup(function(use)
   use {'kyazdani42/nvim-web-devicons'}
   
     -- Dashboard
-  use {'glepnir/dashboard-nvim', config = get_config('dashboard-nvim')}
+  use {'glepnir/dashboard-nvim', config = get_config('dashboard')}
     
     -- Status Line
   use {'nvim-lualine/lualine.nvim',
@@ -59,7 +60,7 @@ return require('packer').startup(function(use)
   use {'tpope/vim-commentary'}
 
     -- Better syntax highlighting
-  use {'nvim-treesitter/nvim-treesitter', config = get_config('nvim-treesitter')}
+  use {'nvim-treesitter/nvim-treesitter', config = get_config('treesitter')}
     
     -- Fuzzy file finder
   use {'nvim-telescope/telescope.nvim', 
