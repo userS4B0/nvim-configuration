@@ -1,4 +1,11 @@
--- [[ plug.lua ]]
+-- [[ plugins.lua ]]
+
+-- Get configuration files for plugins (allocated in config/)
+function get_config(name)
+  return string.format('require("config/%s")', name)
+end
+
+-- Plugins start
 return require('packer').startup(function(use)
 
   -- [[ General ]] ------------------------------------------------------------------------------
@@ -12,30 +19,34 @@ return require('packer').startup(function(use)
   
     
     -- Better escape insert mode 
-  use {'max397574/better-escape.nvim', config = [[require('config.better-escape')]]}
+  use {'max397574/better-escape.nvim', config = get_config('better-escape')}
     
     -- Command Line autocompletion
-  use {'gelguy/wilder.nvim', config = [['require('config.wilder')']]}  
+  use {'gelguy/wilder.nvim', config = get_config('wilder')}  
     
   -- [[ Theming ]] ------------------------------------------------------------------------------
   
     -- Themes
   use {'folke/tokyonight.nvim'}
   use {'shaunsingh/nord.nvim'}
+
+    -- Icons
+  use {'kyazdani42/nvim-web-devicons'}
   
     -- Dashboard
-  use {'glepnir/dashboard-nvim', config = [[require('config.dashboard-nvim')]]}
+  use {'glepnir/dashboard-nvim', config = get_config('dashboard-nvim')}
     
     -- Status Line
   use {'nvim-lualine/lualine.nvim',
        requires = {'kyazdani42/nvim-web-devicons', opt = true},
-       config = [[require('config.lualine')]]
+       config = get_config('lualine')
   }
  
     -- Tabs & Buffers
   use {'akinsho/bufferline.nvim', 
        tag = "v2.*", 
-       requires = {'kyazdani42/nvim-web-devicons', opt = true}
+       requires = {'kyazdani42/nvim-web-devicons', opt = true},
+       config = get_config('bufferline')
   }
 
   
@@ -48,7 +59,7 @@ return require('packer').startup(function(use)
   use {'tpope/vim-commentary'}
 
     -- Better syntax highlighting
-  use {'nvim-treesitter/nvim-treesitter'}
+  use {'nvim-treesitter/nvim-treesitter', config = get_config('nvim-treesitter')}
     
     -- Fuzzy file finder
   use {'nvim-telescope/telescope.nvim', 
