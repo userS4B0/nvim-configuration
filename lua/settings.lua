@@ -18,8 +18,9 @@ set.fileencoding = 'utf8'	        -- File encoding to use
 set.syntax = "ON"		              -- Allow syntax highlighting
 set.termguicolors = true	        -- If term supports ui color then enable
 
-cmd('colorscheme tokyonight')     -- Tokyo Night Theme
--- cmd('colorscheme nord')           -- Nord Theme
+-- cmd('colorscheme tokyonight-storm')     -- Tokyo Night Theme
+cmd("colorscheme tokyonight-night")     -- Tokyo Night darker 
+-- cmd('colorscheme nord')                 -- Nord Theme
 
 -- [[ Search ]]
 set.ignorecase = true		          -- Ignore case in search
