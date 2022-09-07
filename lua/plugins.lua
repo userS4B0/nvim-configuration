@@ -18,7 +18,6 @@ return require('packer').startup(function(use)
     config = get_config('luatree')    
   }
   
-    
     -- Better escape insert mode 
   use {'max397574/better-escape.nvim', config = get_config('better-escape')}
     
