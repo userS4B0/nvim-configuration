@@ -9,4 +9,4 @@ require('vars')     -- Variables
 require('settings') -- Options
 require('keymaps')  -- Keymaps
 require('plugins')  -- Plugins
-require('plugrc')   -- Loaded Plugins
+require('plugrc')   -- Load configured plugins
