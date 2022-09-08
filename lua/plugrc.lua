@@ -1,4 +1,3 @@
-require('config.dashboard-nvim')
 require('config.lualine')
 require('config.luatree')
 require('nvim-autopairs').setup {}

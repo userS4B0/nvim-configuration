@@ -35,8 +35,8 @@ return require('packer').startup(function(use)
   
     -- Dashboard
   use {'glepnir/dashboard-nvim', config = get_config('dashboard')}
-  use {''}    
-    -- Status Line
+
+  -- Status Line
   use {'nvim-lualine/lualine.nvim',
        requires = {'kyazdani42/nvim-web-devicons', opt = true},
        config = get_config('lualine')
