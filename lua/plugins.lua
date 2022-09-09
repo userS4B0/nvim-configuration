@@ -73,13 +73,6 @@ return require('packer').startup(function(use)
   use {"tpope/vim-fugitive"}
     
     -- Conqueror of completion
-  use {
-    "neoclide/coc.nvim", 
-    branch = "release", 
-    requires = {
-      {"fannheyward/coc-markdownlint"},
-      {"neoclide/coc-css"},
-      {"fannheyward/coc-pyright"},
-    }
-  }
+  use {"neoclide/coc.nvim", branch = "release"}
+
 end)
