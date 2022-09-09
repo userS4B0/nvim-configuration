@@ -1,6 +1,6 @@
 require('config.lualine')
 require('config.luatree')
-require('nvim-autopairs').setup {}
+require('config.autopairs')
 require('config.bufferline')
 require('config.treesitter')
 require('telescope')
