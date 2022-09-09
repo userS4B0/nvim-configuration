@@ -22,8 +22,11 @@ return require('packer').startup(function(use)
   use {'max397574/better-escape.nvim', config = get_config('better-escape')}
     
     -- Command Line autocompletion
-  use {'gelguy/wilder.nvim', config = get_config('wilder')}  
-    
+  use {"gelguy/wilder.nvim", config = get_config("wilder")}  
+
+    -- Show characters on indentation
+  use {"lukas-reineke/indent-blankline.nvim", config = get_config("indent-blankline")}
+
   -- [[ Theming ]] ------------------------------------------------------------------------------
   
     -- Themes
@@ -37,7 +40,7 @@ return require('packer').startup(function(use)
   use {'glepnir/dashboard-nvim', config = get_config('dashboard')}
 
   -- Status Line
-  use {'nvim-lualine/lualine.nvim',
+  use {"nvim-lualine/lualine.nvim",
        requires = {'kyazdani42/nvim-web-devicons', opt = true},
        config = get_config('lualine')
   }
