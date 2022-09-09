@@ -53,7 +53,7 @@ return require('packer').startup(function(use)
   -- [[ Development ]] --------------------------------------------------------------------------
     
     -- Autopairing characters (){}[]''""
-  use {'windwp/nvim-autopairs'}                                 
+  use {"windwp/nvim-autopairs", config = get_config("autopairs")}                                 
 
     -- Coments
   use {'tpope/vim-commentary'}
@@ -76,5 +76,9 @@ return require('packer').startup(function(use)
   use {
     "neoclide/coc.nvim", 
     branch = "release", 
-    requires = {"fannheyward/coc-markdownlint"}}
+    requires = {
+      {"fannheyward/coc-markdownlint"},
+      {"neoclide/coc-css"},
+    }
+  }
 end)
