@@ -70,8 +70,11 @@ return require('packer').startup(function(use)
   }
 
     -- Git integration
-  use {'tpope/vim-fugitive'}
+  use {"tpope/vim-fugitive"}
     
     -- Conqueror of completion
-  use {"neoclide/coc.nvim", branch = "release"}
+  use {
+    "neoclide/coc.nvim", 
+    branch = "release", 
+    requires = {"fannheyward/coc-markdownlint"}}
 end)
