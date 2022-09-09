@@ -79,6 +79,7 @@ return require('packer').startup(function(use)
     requires = {
       {"fannheyward/coc-markdownlint"},
       {"neoclide/coc-css"},
+      {"fannheyward/coc-pyright"},
     }
   }
 end)
