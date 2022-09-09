@@ -71,5 +71,7 @@ return require('packer').startup(function(use)
 
     -- Git integration
   use {'tpope/vim-fugitive'}
-
+    
+    -- Conqueror of completion
+  use {"neoclide/coc.nvim", branch = "release"}
 end)
