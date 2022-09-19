@@ -1,4 +1,5 @@
---[[ INIT.LUA ]] 
+
+-- INIT.LUA
 
 -- LEADER
 vim.g.mapleader = ","
