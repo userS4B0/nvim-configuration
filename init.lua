@@ -10,4 +10,11 @@ require("vars")     -- Variables
 require("settings") -- Options
 require("keymaps")  -- Keymaps
 require("plugins")  -- Plugins
-require("plugrc")   -- Load configured plugins
+
+-- Autocompile Plugin manager
+vim.cmd([[
+  augroup packer_user_config
+    autocmd!
+    autocmd BufWritePost plugins.lua source <afile> | PackerCompile
+  augroup end
+]])
