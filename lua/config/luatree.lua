@@ -94,10 +94,3 @@ nvim_tree.setup {
     }
   }
 }
-
-vim.keymap.set('n', 't<space>', function() 
-  return require('nvim-tree').toggle(false, true) 
-end,
-
-{noremap = true, silent = true, desc = "toggle nvim-tree"})
-
