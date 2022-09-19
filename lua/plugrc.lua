@@ -1,11 +1,13 @@
-require('config.lualine')
-require('config.luatree')
-require('config.autopairs')
-require('config.bufferline')
-require('config.treesitter')
-require('telescope')
-require('config.better-escape')
-require('config.wilder')
+-- Load Plugins and their configuration
+require("config.lualine")
+require("config.luatree")
+require("config.autopairs")
+require("config.bufferline")
+require("config.treesitter")
+require("telescope")
+require("config.better-escape")
+require("config.wilder")
+require("config.notify")
 
 -- Autocompile Plugin manager
 vim.cmd([[
