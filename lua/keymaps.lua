@@ -24,8 +24,8 @@ map("n", "<C-k>", "<C-w>k", opts)
 map("n", "<C-l>", "<C-w>l", opts)
 
 -- Resize with arrows
-map("n", "<C-Up>", ":resize -2<CR>", opts)
-map("n", "<C-Down>", ":resize +2<CR>", opts)
+map("n", "<C-Up>", ":resize +2<CR>", opts)
+map("n", "<C-Down>", ":resize -2<CR>", opts)
 map("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 map("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
@@ -35,34 +35,3 @@ map("n", "<S-h>", ":bprevious<CR>", opts)
 
 -- Nvimtree
 map("n", "t", ":NvimTreeToggle<cr>", opts)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
--- LuaTree
--- map("n", "t", function()
---   return require("nvim-tree").toggle(false, true)
--- end, {noremap = true, silent = true, desc = "toggle nvim-tree"})
-
--- -- map("n", ",", [[:BufferLinecyclePrev]], {noremap = true, silent = true, desc = "goto prev buffer"})
--- map("n", ".", function()
---   return require("bufferline").go_to_buffer(1, false)
--- end, {noremap = true, silent = true, desc = "goto next buffer"})
-
--- map("n", ",", function()
---   return require("bufferline").go_to_buffer(-1, false)
--- end, {noremap = true, silent = true, desc = "goto prev buffer"})
