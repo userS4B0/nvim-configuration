@@ -1,12 +1,50 @@
 -- [[ plugins.lua ]]
 
 -- Get configuration files for plugins (allocated in config/)
-function GetConfig(name)
+-- Expects config filename
+local function GetConfig(name)
   return string.format("require('config/%s')", name)
 end
 
+
+-- Bootstraping packer
+local ensure_packer = function()
+  local fn = vim.fn
+  local install_path = fn.stdpath("data").."/site/pack/packer/start/packer.nvim"
+  if fn.empty(fn.glob(install_path)) > 0 then
+    fn.system({
+      "git",
+      "clone",
+      "--depth",
+      "1", 
+      "https://github.com/wbthomason/packer.nvim",
+      install_path
+    })
+    print("Installing Packer...")
+    vim.api.nvim_command("packadd packer.nvim")
+    return true
+  end
+  return false
+end
+
+local packer_bootstrap = ensure_packer()
+
+
+-- Initialize & configure packer
+local packer = require("packer")
+
+packer.init({
+  enable = true, -- Enable profiling 
+  threshold = 0, -- Amount(ms) plugins load time must be over for it to be included in the profile
+  max_jobs = nil, -- Limit number of simultaneous jobs. 20 to Prevent PackerSync form being "stuck"
+  -- Have packer use a popup window
+  display = {
+    open_fn = function() return require("packer.util").float({ border = "rounded" }) end,
+  },
+})
+
 -- Plugins start
-return require("packer").startup(function(use)
+packer.startup(function(use)
 
 
  -- [[ General ]] --------------------------------------------------------------------------------
@@ -34,7 +72,6 @@ return require("packer").startup(function(use)
   use {"glepnir/dashboard-nvim",                                    -- Dashboard
     config = GetConfig("dashboard")
   }
-  
   use {"nvim-lualine/lualine.nvim",                                 -- Status Line
     requires = {"kyazdani42/nvim-web-devicons",opt = true},
     config = GetConfig("lualine")
@@ -61,5 +98,9 @@ return require("packer").startup(function(use)
   }
   use {"tpope/vim-fugitive"}                                        -- Git Integration
   use {"neoclide/coc.nvim", branch = "release"}                     -- Conqueror of completion
+ -------------------------------------------------------------------------------------------------
+ 
+ -- [[ Automatic setup ]] ------------------------------------------------------------------------
+ if packer_bootstrap then require("packer").sync() end
  -------------------------------------------------------------------------------------------------
 end)
