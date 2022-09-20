@@ -61,5 +61,11 @@ return require("packer").startup(function(use)
   }
   use {"tpope/vim-fugitive"}                                        -- Git Integration
   use {"neoclide/coc.nvim", branch = "release"}                     -- Conqueror of completion
+  use {"aurum77/live-server.nvim",                                  -- Live server web development
+    run = function()
+      require"live_server.util".install()
+    end,
+    cmd = { "LiveServer","LiveServerStart","LiveServerStop" },
+  }
  -------------------------------------------------------------------------------------------------
 end)
