@@ -66,6 +66,7 @@ return require("packer").startup(function(use)
       require"live_server.util".install()
     end,
     cmd = { "LiveServer","LiveServerStart","LiveServerStop" },
+    config = GetConfig("live-server"),
   }
  -------------------------------------------------------------------------------------------------
 end)
