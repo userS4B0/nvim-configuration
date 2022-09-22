@@ -23,5 +23,8 @@
   // diagnostics
   "diagnostic.errorSign": "•",
   "diagnostic.warningSign": "•",
-  "diagnostic.infoSign": "•"
+  "diagnostic.infoSign": "•",
+
+  // autoupdate
+  "coc.preferences.extensionUpdateCheck": "weekly"
 }
