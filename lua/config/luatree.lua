@@ -12,10 +12,8 @@ nvim_tree.setup {
   open_on_tab = false,
   sort_by = "name",
   update_cwd = false,
-  
   view = {
     width = 30,
-    height = 30,
     hide_root_folder = false,
     side = "left",
     preserve_window_proportions = false,
@@ -23,7 +21,7 @@ nvim_tree.setup {
     relativenumber = false,
     signcolumn = "yes",
     mappings = {
-      custom_only = false,  
+      custom_only = false,
       list = {} -- user mappings go here
     }
   },
