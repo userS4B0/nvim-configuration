@@ -83,9 +83,6 @@ packer.startup(function(use)
  -------------------------------------------------------------------------------------------------
 
  -- [[ Development ]] ----------------------------------------------------------------------------
-  use {"windwp/nvim-autopairs",                                     -- Autopairing
-    config = GetConfig("autopairs")
-  }
   use {"tpope/vim-commentary"}                                      -- Comment Shortcuts
   use {"nvim-treesitter/nvim-treesitter",                           -- Better Syntax Highlighter
     config = GetConfig("treesitter")

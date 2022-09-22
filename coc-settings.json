@@ -1,5 +1,7 @@
 {
   "suggest.maxCompleteItemCount": 20,
+
+  // autoformatting (coc-prettier)
   "coc.preferences.formatOnSaveFiletypes": [
     "css",
     "markdown",
