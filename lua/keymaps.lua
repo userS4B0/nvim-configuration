@@ -13,11 +13,11 @@ local opts = {noremap = true, silent = true}
 
 
 -- Normal --
+
 -- Other shortcuts
 map("n", "<C-s>", ":w<CR>", opts)
 map("n", "<C-x>", ":q<CR>", opts)
-map("n", "<C-f>", ":Telescope find_files<CR>", opts)
-map("n", "<C-p>", ":CocCommand prettier.formatFile<CR>", opts)
+
 -- Better window navigation
 map("n", "<C-h>", "<C-w>h", opts)
 map("n", "<C-j>", "<C-w>j", opts)
@@ -34,5 +34,11 @@ map("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 map("n", "<S-l>", ":bnext<CR>", opts)
 map("n", "<S-h>", ":bprevious<CR>", opts)
 
--- Nvimtree
+-- Toggle Nvimtree
 map("n", "t", ":NvimTreeToggle<cr>", opts)
+
+-- Toggle Telescope Fuzzy File finder
+map("n", "<C-f>", ":Telescope find_files<CR>", opts)
+
+-- Format Document (coc-prettier)
+map("n", "<C-p>", ":CocCommand prettier.formatFile<CR>", opts)
