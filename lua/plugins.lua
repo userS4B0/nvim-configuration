@@ -16,7 +16,7 @@ local ensure_packer = function()
       "git",
       "clone",
       "--depth",
-      "1", 
+      "1",
       "https://github.com/wbthomason/packer.nvim",
       install_path
     })
@@ -34,7 +34,7 @@ local packer_bootstrap = ensure_packer()
 local packer = require("packer")
 
 packer.init({
-  enable = true, -- Enable profiling 
+  enable = true, -- Enable profiling
   threshold = 0, -- Amount(ms) plugins load time must be over for it to be included in the profile
   max_jobs = nil, -- Limit number of simultaneous jobs. 20 to Prevent PackerSync form being "stuck"
   -- Have packer use a popup window
@@ -103,7 +103,7 @@ packer.startup(function(use)
     config = GetConfig("live-server"),
   }
  -------------------------------------------------------------------------------------------------
- 
+
  -- [[ Automatic setup ]] ------------------------------------------------------------------------
  if packer_bootstrap then require("packer").sync() end
  -------------------------------------------------------------------------------------------------
