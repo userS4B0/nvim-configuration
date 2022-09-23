@@ -41,4 +41,5 @@ map("n", "t", ":NvimTreeToggle<cr>", opts)
 map("n", "<C-f>", ":Telescope find_files<CR>", opts)
 
 -- Format Document (coc-prettier)
-map("n", "<C-p>", ":CocCommand prettier.formatFile<CR>", opts)
+map("n", "<S-p>", ":CocCommand prettier.formatFile<CR>", opts)
+
