@@ -30,6 +30,8 @@ end
 local packer_bootstrap = ensure_packer()
 
 
+ -- [[ Automatic setup ]] ------------------------------------------------------------------------
+ if packer_bootstrap then require("packer").sync() end
 -- Initialize & configure packer
 local packer = require("packer")
 
@@ -103,8 +105,5 @@ packer.startup(function(use)
     config = GetConfig("live-server"),
   }
  -------------------------------------------------------------------------------------------------
-
- -- [[ Automatic setup ]] ------------------------------------------------------------------------
- if packer_bootstrap then require("packer").sync() end
  -------------------------------------------------------------------------------------------------
 end)
