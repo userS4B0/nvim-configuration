@@ -1,12 +1,5 @@
 -- [[ plugins.lua ]]
 
--- Get configuration files for plugins (allocated in config/)
--- Expects config filename
-local function GetConfig(name)
-  return string.format("require('config/%s')", name)
-end
-
-
 -- Bootstraping packer
 local ensure_packer = function()
   local fn = vim.fn
@@ -29,9 +22,13 @@ end
 
 local packer_bootstrap = ensure_packer()
 
+-- Get configuration files for plugins (allocated in config/)
+-- Expects config filename
+local function GetConfig(name)
+  return string.format("require('config/%s')", name)
+end
 
- -- [[ Automatic setup ]] ------------------------------------------------------------------------
- if packer_bootstrap then require("packer").sync() end
+
 -- Initialize & configure packer
 local packer = require("packer")
 
@@ -105,5 +102,8 @@ packer.startup(function(use)
     config = GetConfig("live-server"),
   }
  -------------------------------------------------------------------------------------------------
+
+ -- [[ Automatic setup ]] ------------------------------------------------------------------------
+ if packer_bootstrap then require("packer").sync() end
  -------------------------------------------------------------------------------------------------
 end)
