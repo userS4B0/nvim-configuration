@@ -30,9 +30,10 @@ map("n", "<C-Down>", ":resize -2<CR>", opts)
 map("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 map("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
--- Navigate buffers
+-- Buffers
 map("n", "<S-l>", ":bnext<CR>", opts)
 map("n", "<S-h>", ":bprevious<CR>", opts)
+map("n", "<S-x>", ":bdelete<CR>", opts)
 
 -- Toggle Nvimtree
 map("n", "t", ":NvimTreeToggle<cr>", opts)
