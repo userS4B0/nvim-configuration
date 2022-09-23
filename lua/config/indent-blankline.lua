@@ -1,10 +1,4 @@
--- require("indent_blankline").setup {
---   show_current_blankline = " ",
---   show_current_context = true,
---   show_current_context_start = true
--- }
-
-require("indent_blankline").setup({
+require("indent_blankline").setup {
   indentLine_enabled = 1,
   char = "▏",
   filetype_exclude = {
@@ -47,4 +41,4 @@ require("indent_blankline").setup({
     "while",
     "for",
   },
-})
+}
