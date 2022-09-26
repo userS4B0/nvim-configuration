@@ -3,7 +3,7 @@
 -- Get configuration files for plugins (allocated in config/)
 -- Expects config filename
 local function GetConfig(name)
-  return string.format("require('config/%s')", name)
+  return string.format("require('plugins/config/%s')", name)
 end
 
 
