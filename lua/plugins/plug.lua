@@ -76,9 +76,9 @@ packer.startup(function(use)
     requires = {"kyazdani42/nvim-web-devicons",opt = true},
     config = GetConfig("lualine")
   }
-  use {'akinsho/bufferline.nvim', tag = "v2.*",                     -- Buffers & Tabs
-    requires = {'kyazdani42/nvim-web-devicons',opt = true},
-    config = GetConfig('bufferline')
+  use {"akinsho/bufferline.nvim", tag = "v2.*",                     -- Buffers & Tabs
+    requires = {"kyazdani42/nvim-web-devicons",opt = true},
+    config = GetConfig("bufferline")
   }
  -------------------------------------------------------------------------------------------------
 
