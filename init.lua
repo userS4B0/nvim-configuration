@@ -9,7 +9,7 @@ vim.g.localleader = "\\"
 require("vars")             -- Variables
 require("user/settings")    -- Options
 require("user/keymaps")     -- Keymaps
-require("plugins/plug")          -- Plugins
+require("plugins/plug")     -- Plugins
 require("themes")           -- Themes
 
 -- Autocompile Plugin manager
