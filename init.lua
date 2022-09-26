@@ -10,6 +10,7 @@ require("vars")     -- Variables
 require("settings") -- Options
 require("keymaps")  -- Keymaps
 require("plugins")  -- Plugins
+require("themes")   -- Themes
 
 -- Autocompile Plugin manager
 vim.cmd([[
@@ -18,6 +19,3 @@ vim.cmd([[
     autocmd BufWritePost plugins.lua source <afile> | PackerCompile
   augroup end
 ]])
-
--- Autoinstall missing plugins when starting vim
-vim.cmd([[PackerInstall]])
