@@ -3,7 +3,7 @@
 -- Get configuration files for plugins (allocated in config/)
 -- Expects config filename
 local function GetConfig(name)
-  return string.format("require('plugins/config/%s')", name)
+  return string.format("require('plug-config/%s')", name)
 end
 
 
@@ -31,7 +31,12 @@ local packer_bootstrap = ensure_packer()
 
 
 -- Initialize & configure packer
-local packer = require("packer")
+local status_ok, packer = pcall(require, "packer")
+
+if not status_ok then
+  vim.notify("Plugin manager error!", "ERROR")
+  return
+end
 
 packer.init({
   enable = true, -- Enable profiling
