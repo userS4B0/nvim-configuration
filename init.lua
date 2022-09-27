@@ -1,6 +1,6 @@
 
 -- INIT.LUA
-
+local cmd = vim.cmd
 -- LEADER
 vim.g.mapleader = ","
 vim.g.localleader = "\\"
@@ -10,10 +10,10 @@ require("vars")             -- Variables
 require("user/settings")    -- Options
 require("user/keymaps")     -- Keymaps
 require("plugins/plug")     -- Plugins
-require("themes")           -- Themes
+require("colorschemes")     -- Colorschemes
 
 -- Autocompile Plugin manager
-vim.cmd([[
+cmd([[
   augroup packer_user_config
     autocmd!
     autocmd BufWritePost plugins.lua source <afile> | PackerCompile
