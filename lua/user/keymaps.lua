@@ -14,10 +14,6 @@ local opts = {noremap = true, silent = true}
 
 -- Normal --
 
--- Other shortcuts
-map("n", "<C-s>", ":w<CR>", opts)
-map("n", "<C-x>", ":q<CR>", opts)
-
 -- Better window navigation
 map("n", "<C-h>", "<C-w>h", opts)
 map("n", "<C-j>", "<C-w>j", opts)
