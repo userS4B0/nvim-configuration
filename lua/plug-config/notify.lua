@@ -1,8 +1,13 @@
+
+-- Secure plugin config implementation
 local status_ok, notify = pcall(require("notify"))
 if not status_ok then
+  vim.notify("Notify plugin not loaded!", "ERROR")
   return
 end
 
+
+-- Plugin configuration
 notify.setup({
   stages            = "fade_in_slide_out",  -- Animation style
   on_open           = nil,                  -- Func when new window is opened
@@ -19,4 +24,5 @@ notify.setup({
     TRACE           = "✎"
     }
 })
-vim.notify = require("notify")
+
+vim.notify = notify

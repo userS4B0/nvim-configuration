@@ -1,8 +1,14 @@
+
+-- Secure plugin config implementation
 local status_ok, bufferline = pcall(require, "bufferline")
+
 if not status_ok then
+  vim.notify("Bufferline plugin not loaded!", "ERROR")
   return
 end
 
+
+-- Plugin configuration
 bufferline.setup {
   options = {
     numbers = "none",
@@ -20,12 +26,13 @@ bufferline.setup {
     left_trunc_marker = "",
     right_trunc_marker = "",
     max_name_length = 30,
-    max_prefix_length = 30,    tab_size = 21,
+    max_prefix_length = 30,    
+    tab_size = 21,
     diagnostics = "coc",
     diagnostics_update_in_insert = true,
     offsets = {{
       filetype = "NvimTree",
-      text = "File Explorer",
+      text = " פּ File Explorer",
       text_align = "center",
       separator = true,
     }},

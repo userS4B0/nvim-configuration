@@ -1,4 +1,15 @@
-require("indent_blankline").setup {
+
+-- Secure plugin config implementation
+local status_ok, indent_blankline = pcall(require, "indent_blankline")
+
+if not status_ok then
+  vim.notify("Indent blankline plugin not loaded!", "ERROR")
+  return
+end
+
+
+-- Plugin configuration
+indent_blankline.setup {
   indentLine_enabled = 1,
   char = "▏",
   filetype_exclude = {

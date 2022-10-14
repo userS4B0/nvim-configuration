@@ -1,8 +1,14 @@
+
+-- Secure plugin config implementation
 local status_ok, dashboard = pcall(require, "dashboard")
+
 if not status_ok then
+  vim.notify("Dashboard plugin not loaded!", "ERROR")
   return
 end
 
+
+-- Plugin configuration
 local header = {
 "   ⣴⣶⣤⡤⠦⣤⣀⣤⠆     ⣈⣭⣿⣶⣿⣦⣼⣆          ",
 "    ⠉⠻⢿⣿⠿⣿⣿⣶⣦⠤⠄⡠⢾⣿⣿⡿⠋⠉⠉⠻⣿⣿⡛⣦       ",
