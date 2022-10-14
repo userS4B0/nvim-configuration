@@ -39,21 +39,30 @@ if not status_ok then
 end
 
 packer.init({
-  enable = true, -- Enable profiling
-  threshold = 0, -- Amount(ms) plugins load time must be over for it to be included in the profile
-  max_jobs = nil, -- Limit number of simultaneous jobs. 20 to Prevent PackerSync form being "stuck"
-  -- Have packer use a popup window
-  display = {
-    open_fn = function() return require("packer.util").float({ border = "rounded" }) end,
+  enable = true,  -- Enable profiling
+  threshold = 0,  -- Amount(ms) plugins load time must be over for it to be included in the profile
+  max_jobs = nil, -- Limit number of simultaneous jobs.
+  display = {     -- Have packer use a popup window
+    open_fn = function()
+      return require("packer.util").float({ border = "rounded" })
+    end,
   },
 })
 
 -- Plugins start
 packer.startup(function(use)
 
+  use {"wbthomason/packer.nvim"}                                    -- Plugin Manager
+
+ -- [[ Theming ]] --------------------------------------------------------------------------------
+  use {"folke/tokyonight.nvim",                                     -- Tokyo Night Theme
+    config = GetConfig("tokyonight")
+  }
+  use {"shaunsingh/nord.nvim"}                                      -- Nord Theme
+  use {"kyazdani42/nvim-web-devicons"}                              -- Icons
+ -------------------------------------------------------------------------------------------------
 
  -- [[ General ]] --------------------------------------------------------------------------------
-  use {"wbthomason/packer.nvim"}                                    -- Plugin Manager
   use {"kyazdani42/nvim-tree.lua",                                  -- File Explorer (Tree)
     requires = {"kyazdani42/nvim-web-devicons", opt = true},
     config = GetConfig("luatree")
@@ -68,15 +77,6 @@ packer.startup(function(use)
     config = GetConfig("indent-blankline")
   }
   use {"rcarriga/nvim-notify"}                                      -- Notifications
- -------------------------------------------------------------------------------------------------
-
- -- [[ Theming ]] --------------------------------------------------------------------------------
-  use {"folke/tokyonight.nvim"}                                     -- Tokyo Night Theme
-  use {"shaunsingh/nord.nvim"}                                      -- Nord Theme
-  use {"kyazdani42/nvim-web-devicons"}                              -- Icons
-  use {"glepnir/dashboard-nvim",                                    -- Dashboard
-    config = GetConfig("dashboard")
-  }
   use {"nvim-lualine/lualine.nvim",                                 -- Status Line
     requires = {"kyazdani42/nvim-web-devicons",opt = true},
     config = GetConfig("lualine")
@@ -84,6 +84,9 @@ packer.startup(function(use)
   use {"akinsho/bufferline.nvim", tag = "v2.*",                     -- Buffers & Tabs
     requires = {"kyazdani42/nvim-web-devicons",opt = true},
     config = GetConfig("bufferline")
+  }
+  use {"glepnir/dashboard-nvim",                                    -- Dashboard
+    config = GetConfig("dashboard")
   }
  -------------------------------------------------------------------------------------------------
 
@@ -100,13 +103,18 @@ packer.startup(function(use)
   }
   use {"tpope/vim-fugitive"}                                        -- Git Integration
   use {"neoclide/coc.nvim", branch = "release"}                     -- Conqueror of completion
-  -- use {"aurum77/live-server.nvim",                                  -- Live server web development
-  --   run = function()
-  --     require"live_server.util".install()
-  --   end,
-  --   cmd = { "LiveServer","LiveServerStart","LiveServerStop" },
-  --   config = GetConfig("live-server"),
-  -- }
+  use {
+    "AmeerTaweel/todo.nvim",
+    requires = "nvim-lua/plenary.nvim",
+    config = GetConfig("todo")
+  }
+  use {"aurum77/live-server.nvim",                                  -- Live server web development
+    run = function()
+      require"live_server.util".install()
+    end,
+    cmd = { "LiveServer","LiveServerStart","LiveServerStop" },
+    config = GetConfig("live-server"),
+  }
  -------------------------------------------------------------------------------------------------
 
  -- [[ Automatic setup ]] ------------------------------------------------------------------------
